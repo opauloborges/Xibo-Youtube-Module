@@ -7,8 +7,8 @@
 - The Player must be connected to the internet and have access to YouTube.
 
 ---
-## Instalação
-- Copie os arquvos para a pasta `\custom` do seu CMS. Feito isso  vá até Administração > Modulos e procure por YouTube ative o modulo e vá ate o editor de Layout e procure pelo módulo.
+## Installation
+- Copy the files to the `\custom` folder of your CMS. Then, go to **Administration** > **Modules**, search for **YouTube**, activate the module, and go to the Layout Editor to find the module.
 
 ## Folder Structure for Xibo Custom Modules
 
