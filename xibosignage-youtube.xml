@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <!-- Module Identification -->
+    <id>youtube-widget</id>
+    <name>YouTube</name>
+    <author>Paulo Borges</author>
+    <description>Displays YouTube videos from a URL, with regex processing performed in JavaScript.</description>
+    <icon>fab fa-youtube</icon>
+
+    <!-- Settings for the Layout Editor -->
+    <class></class>
+    <type>youtube-js</type>
+    <dataType></dataType>
+    <schemaVersion>1</schemaVersion>
+    <assignable>1</assignable>
+    <regionSpecific>1</regionSpecific>
+    <renderAs>html</renderAs>
+    <defaultDuration>60</defaultDuration>
+
+    <settings></settings>
+
+    <!-- Property: the video URL -->
+    <properties>
+        <property id="youtubeUrl" type="text" variant="uri">
+            <title>YouTube URL</title>
+            <helpText>Enter the video URL (e.g., https://www.youtube.com/watch?v=abc123)</helpText>
+            <default></default>
+            <rule>
+                <test type="and">
+                    <!-- Requires the field to have a value -->
+                    <condition type="required"></condition>
+                    <!-- Checks if it is a valid URL -->
+                    <condition type="uri"></condition>
+                </test>
+            </rule>
+        </property>
+        <property type="message">
+            <title>This widget requires an internet connection.
+            Ensure that your player is online and has access to YouTube.
+            Videos or live streams with copyright restrictions are not displayed by the module. 
+            Example: Football games, Sports channels, etc.</title>
+        </property>
+    </properties>
+
+    <preview></preview>
+
+    <stencil>
+        
+        <twig><![CDATA[
+<div id="player" style="width:100%;"></div>
+
+<script>
+    // Gets the URL provided by the user
+    var url = "{{youtubeUrl}}";
+
+    // Dynamically loads the YouTube API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    var playerState = -1;
+    var readyCalled = false;
+
+    // Extracts the video ID using regex directly in JS
+    var pattern = /(?:v=|embed\/|youtu\.be\/|\/live\/)([^?&/]+)/;
+    var match = url.match(pattern);
+    var videoId = (match && match[1]) ? match[1] : '';
+
+    // Function called by the YouTube API when it is loaded
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            suggestedQuality: 'hd1080',
+            height: '1080',
+            width: '1920',
+            videoId: videoId,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        readyCalled = true;
+        event.target.playVideo();
+    }
+
+    function onPlayerStateChange(event) {
+        // If the player is buffering (3) and is reset (-1), try playing again
+        if (readyCalled && playerState === 3 && event.data === -1) {
+            setTimeout(function() {
+                player.playVideo();
+            }, 1000);
+        }
+        playerState = event.data;
+    }
+</script>
+        ]]></twig>
+
+        <style><![CDATA[
+#player {
+    border: none;
+}
+        ]]></style>
+    </stencil>
+    
+    <onRender><![CDATA[
+if(properties.scaleContent) {
+    window.scaleContent = true;
+    $(target).xiboLayoutScaler(globalOptions);
+}
+]]></onRender>
+</module>
