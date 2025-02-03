@@ -51,7 +51,7 @@
 
 <script>
     // Gets the URL provided by the user
-    var url = "{{youtubeUrl}}";
+    var url = "{{youtubeUrl}}"; // from the property
 
     // Dynamically loads the YouTube API
     var tag = document.createElement('script');
