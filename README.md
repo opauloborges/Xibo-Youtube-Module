@@ -23,3 +23,6 @@
             
 
 ---
+This module **DOES NOT** download YouTube videos to your Xibo Server, as this would violate YouTube's terms of service.  
+
+[YouTube Terms of Service](https://www.youtube.com/static?gl=GB&template=terms)
