@@ -1,3 +1,6 @@
+
+![image|187x72](upload://mlkTBYU0JceLjxyMfHarOCa84ws.png)
+
 ## Xibo-Youtube-Module
 - Displays YouTube videos from a URL, with regex processing performed in JavaScript using **YouTube Javascript API**.
 
