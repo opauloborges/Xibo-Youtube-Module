@@ -2,14 +2,14 @@
 <module>
     <!-- Module Identification -->
     <id>youtube-widget</id>
-    <name>YouTube</name>
+    <name>YouTube (JS API)</name>
     <author>Paulo Borges</author>
     <description>Displays YouTube videos from a URL, with regex processing performed in JavaScript.</description>
     <icon>fab fa-youtube</icon>
 
     <!-- Settings for the Layout Editor -->
     <class></class>
-    <type>youtube-js</type>
+    <type>youtube-js-api</type>
     <dataType></dataType>
     <schemaVersion>1</schemaVersion>
     <assignable>1</assignable>
