@@ -1,5 +1,5 @@
 ## Xibo-Youtube-Module
-- Displays YouTube videos from a URL, with regex processing performed in JavaScript.
+- Displays YouTube videos from a URL, with regex processing performed in JavaScript using YouTube Javascript API.
 
 ## Requirements
 - Xibo CMS version 4.2 or higher.
