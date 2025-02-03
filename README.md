@@ -1,16 +1,16 @@
-# Xibo-Youtube-Module
-Exibe vídeos do YouTube a partir de uma URL, com regex realizada no JavaScript.
+## Xibo-Youtube-Module
+- Displays YouTube videos from a URL, with regex processing performed in JavaScript.
 
-# Requisitos
-- **Xibo CMS** versão 4.0 ou superior.
-- Não testado em versões anteriores
-- O Player precisa estar conectado a internet e com acesso liberado ao YouTube
+## Requirements
+- Xibo CMS version 4.0 or higher.
+- Not tested on previous versions.
+- The Player must be connected to the internet and have access to YouTube.
 
 ---
 ## Instalação
 - Copie os arquvos para a pasta `\custom` do seu CMS. Feito isso  vá até Administração > Modulos e procure por YouTube ative o modulo e vá ate o editor de Layout e procure pelo módulo.
 
-## Estrutura de Pastas para módulos customizados da Xibo
+## Folder Structure for Xibo Custom Modules
 
         ├── /custom/
 
