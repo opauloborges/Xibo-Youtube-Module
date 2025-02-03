@@ -64,7 +64,7 @@
     var readyCalled = false;
 
     // Extracts the video ID using regex directly in JS
-    var pattern = /(?:v=|embed\/|youtu\.be\/|\/live\/)([^?&/]+)/;
+    var pattern = /^(?:https?:\/\/)?(?:www\.)?(?:(?:youtu\.be\/(?:v\/)?|y2u\.be\/(?:v\/)?)|youtube\.com\/(?:shorts\/|v\/|vi\/|e\/|embed\/|live\/|watch\?(?:v|vi)=|\?(?:v|vi)=))([^?&\/]+)/i;
     var match = url.match(pattern);
     var videoId = (match && match[1]) ? match[1] : '';
 
