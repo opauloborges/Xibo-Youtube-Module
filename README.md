@@ -8,7 +8,7 @@
 
 ---
 ## Installation
-- Copy the files to the `\custom` folder of your CMS. Then, go to **Administration** > **Modules**, search for **YouTube**, activate the module, and go to the Layout Editor to find the module.
+- Copy the files to the `\custom\modules` (maybe you have to create `modules`) folder of your CMS. Then, go to **Administration** > **Modules**, search for **YouTube**, activate the module, and go to the Layout Editor to find the module.
 
 ## Folder Structure for Xibo Custom Modules
 
