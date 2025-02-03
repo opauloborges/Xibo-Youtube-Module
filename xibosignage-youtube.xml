@@ -4,7 +4,7 @@
     <id>youtube-widget</id>
     <name>YouTube (JS API)</name>
     <author>Paulo Borges</author>
-    <description>Displays YouTube videos from a URL, with regex processing performed in JavaScript.</description>
+    <description>Displays YouTube videos from a URL, with regex processing performed in JavaScript. Using YouTube Javascript API</description>
     <icon>fab fa-youtube</icon>
 
     <!-- Settings for the Layout Editor -->
